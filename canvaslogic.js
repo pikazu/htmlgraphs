@@ -68,7 +68,7 @@ function mainloop(timestamp) {
 
 function toggle(ele) {
 	halt = !halt
-	ele.value = halt ? "Start" : "Stop";
+	ele.textContent = halt ? "Start" : "Stop";
 }
 
 requestAnimationFrame(mainloop);
