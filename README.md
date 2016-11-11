@@ -1,2 +1,2 @@
 # htmlgraphs
-pikazu.github.io/htmlgraphs
+[link](https://pikazu.github.io/htmlgraphs/)
