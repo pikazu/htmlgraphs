@@ -8,14 +8,19 @@
 </head>
 
 <body>
-<h1> Graphs Test </h1>
+<h1>
+  <div class="lol"> Graphs Test </div>
+</h1>
+<div id="g">(samples at at different rate) scaling factor:</div>
 <canvas id="graph" width="400" height="200">
-	Fallback Content, Canvas not supported!
+	fallback content, canvas not supported!
 </canvas>
 <br>
+Transformation: s*(200/6) + 100. 
+<div id="sample"></div>
 <button onclick="toggle(this)"> Stop </button>
-<div id="min">asdf</div>
-<div id="max">asdf</div>
+<div id="min"></div>
+<div id="max"></div>
 
 
 <script src="canvaslogic.js"></script>

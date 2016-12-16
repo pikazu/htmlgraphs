@@ -34,13 +34,15 @@ function draw() {
 }
 
 var ymin = 100, ymax = 0;
+var g = 1;
 function update() {
 	if(point.length >= (canvas.width / x_dist) + 1) {
 		point.shift();
 	}
-	yc = gaussian()*(canvas.height/6)+ (canvas.height/2);
+	g = gaussian();
+	yc = g*(canvas.height/6)+ (canvas.height/2);
 	point.push([yc,randomColor()]);
-	
+	document.getElementById("sample").textContent = "Sample s: " + g + "\nConversion: " + yc;
 	if (yc < ymin) {
 		ymin = yc;
 		document.getElementById("min").textContent = "Min: " + ymin;
@@ -70,5 +72,17 @@ function toggle(ele) {
 	halt = !halt
 	ele.textContent = halt ? "Start" : "Stop";
 }
+
+var l = [10, 100, 200, 50, 500, 250]
+function toggle_lol(ele) {
+    ele.style.color = randomColor();
+    var s = window.getComputedStyle(ele, null).getPropertyValue("font-size");
+    var per = Math.abs(g)*100;
+    console.log(g);
+    document.getElementById("g").textContent = "(samples at at different rate) scaling factor: " + per + "%";
+    ele.style.fontSize = per + "%";
+}
+
+lol_interval = setInterval(function() { toggle_lol(document.querySelector(".lol")) }, 750 );
 
 requestAnimationFrame(mainloop);
