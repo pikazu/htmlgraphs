@@ -11,13 +11,19 @@ set wildmenu
 function CompileLatex(fname)
 	execute "silent !pdflatex -halt-on-error " . a:fname
 	" Show error messages if there are errors... 
+	
 	execute "redraw!"
 	echom "Compiled " . a:fname
+	
+	" Refresh pdf view by swapping focus after compiling
+	execute "silent !open " . a:fname[:-4] . "pdf"
+	execute "silent !open -a Terminal"
+
 	" Clean *.log and *.aux files
+	let files = split(globpath('.', '*.aux') . "\n" .  globpath('.', '*.log'), "\n")
 endfunction
 
 " http://vimdoc.sourceforge.net/htmldoc/autocmd.html
-" abbreviated as 'au'
+" au[tocmd]
 autocmd BufWritePost *.tex call CompileLatex(expand('%:p'))
 
- 
