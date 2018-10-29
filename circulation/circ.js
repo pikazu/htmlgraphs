@@ -73,7 +73,7 @@ function start() {
 	(function tmp() {
 		if (!stop) {
 			next();
-			setTimeout(tmp, 500);
+			setTimeout(tmp, 250);
 		}
 	})();
 }
