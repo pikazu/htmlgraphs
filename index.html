@@ -2,29 +2,43 @@
 <html>
 
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="style.css">
-<title> HTML Canvas Graphing </title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<title> Pikazu's Digital Museum </title>
 </head>
 
 <body>
-<h1>
-  <div class="lol"> Graphs Test </div>
-</h1>
-<div id="g">(samples at at different rate) scaling factor:</div>
-<canvas id="graph" width="400" height="200">
-	fallback content, canvas not supported!
-</canvas>
-<br>
-Transformation: s*(200/6) + 100. 
-<div id="sample"></div>
-<button onclick="toggle(this)"> Stop </button>
-<div id="min"></div>
-<div id="max"></div>
 
-<a href="./varianceofsamplemean.pdf"> lol i need to store this somewhere before i forget </a>
+	<div class="center">
+		<img src="./resources/20200715_hanafuda_watercolor_watermarked.jpg" 
+			 alt="Two Hanafuda cards (June/Peony/Tane and August/Susuki/Hikari) and a Haiku" 
+			 class="responsive img_center">
+		<div style="white-space:pre-line"> 
+			<i>Left a Peony / On cards of <a href=https://en.wikipedia.org/wiki/Hanafuda>Hanafuda</a> / Moons Right over Grass</i>, July 2020
+			Watercolor
+			14 in &#215; 10 in (35.5 cm &#215; 25.4 cm)
+		</div>
+	</div>
 
-<script src="canvaslogic.js"></script>
+	<hr>
+
+	<center>
+		<h1>
+			<div class="lol"> Graphs Test </div>
+		</h1>
+		<div id="g">(samples at at different rate) scaling factor:</div>
+		<canvas id="graph" width="400" height="200">
+			fallback content, canvas not supported!
+		</canvas>
+		<br>
+		Transformation: s*(200/6) + 100. 
+		<div id="sample"></div>
+		<button onclick="toggle(this)"> Stop </button>
+		<div id="min"></div>
+		<div id="max"></div>
+	</center>
+
+	<script src="canvaslogic.js"></script>
 
 <body>
 
